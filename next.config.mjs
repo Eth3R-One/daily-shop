@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "tailwindui.com",
+			},
+			{
+				protocol: "https",
+				hostname: "dummyjson.com",
+			},
+		],
+	},
+};
 
 export default nextConfig;
