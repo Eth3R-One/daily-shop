@@ -13,6 +13,7 @@ module.exports = {
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
+				"primary-orange": "#7c3aed",
 				"primary-content": "#ffffff",
 				"primary-dark": "#5f14e0",
 				"primary-light": "#9b69f1",
@@ -20,6 +21,7 @@ module.exports = {
 					DEFAULT: "hsl(var(--secondary))",
 					foreground: "hsl(var(--secondary-foreground))",
 				},
+				"secondary-red": "#ed3a51",
 				"secondary-content": "#ffffff",
 				"secondary-dark": "#1462e0",
 				"secondary-light": "#699df1",
@@ -35,6 +37,23 @@ module.exports = {
 				"success-content": "#032503",
 				"warning-content": "#252503",
 				"error-content": "#ffffff",
+
+				// background: "#171122",
+				// foreground: "#231934",
+				// border: "#3a2956",
+
+				copy: "#fbfafd",
+				"copy-light": "#d5cbe6",
+				"copy-lighter": "#9e87c5",
+
+				success: "#3aed3a",
+				warning: "#eded3a",
+				error: "#ed3a3a",
+
+				"success-content": "#032503",
+				"warning-content": "#252503",
+				"error-content": "#ffffff",
+
 				card: {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
@@ -72,5 +91,8 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/aspect-ratio"),
+	],
 };
