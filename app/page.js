@@ -1,4 +1,4 @@
-import CategorySection from "./_components/CategorySection";
+import CategorySection from "./_components/category/CategorySection";
 import HeroSection from "./_components/HeroSection";
 import Navbar from "./_components/Navbar";
 import HomepageProductSection from "./_components/products/HomepageProductSection";
