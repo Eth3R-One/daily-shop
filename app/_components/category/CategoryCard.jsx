@@ -6,7 +6,8 @@ const CategoryCard = ({ category }) => {
 		<a
 			key={category?.name}
 			href={category.href}
-			className="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 "
+			className="relative flex h-80 w-56 flex-col overflow-hidden rounded-lg p-6 hover:opacity-75 cursor-pointer"
+			title={category?.name}
 		>
 			<span aria-hidden="true" className="absolute inset-0">
 				<Image
