@@ -1,9 +1,9 @@
-const ShopPage = () => {
-	return (
-		<div className="bg-rose-200 w-full h-full">
-			<div className=" flex items-center text-rose-600 ">shop page</div>
-		</div>
-	);
+import { getProducts } from "../actions/product-actions";
+import ProductsList from "../_components/products/PorductsList";
+
+const ShopPage = async () => {
+	const products = await getProducts();
+	return <ProductsList products={products} />;
 };
 
 export default ShopPage;
