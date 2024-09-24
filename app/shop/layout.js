@@ -1,16 +1,16 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon, FunnelIcon } from "@heroicons/react/20/solid";
 import MobileFilterDialog from "./_components/_sidebar/MobileFilterDialog";
 import MobileNavProvider from "../providers";
 import MobileFIlterButton from "./_components/MobileFIlterButton";
 import CategoriesSection from "./_components/CategoriesSection";
 
 const sortOptions = [
-	{ name: "Most Popular", href: "#", current: true },
+	{ name: "Most Popular", href: "#", current: false },
 	{ name: "Best Rating", href: "#", current: false },
 	{ name: "Newest", href: "#", current: false },
-	{ name: "Price: Low to High", href: "#", current: false },
+	{ name: "Price: Low to High", href: "#", current: true },
 	{ name: "Price: High to Low", href: "#", current: false },
 ];
 
@@ -85,7 +85,14 @@ export default function ShopLayout({ children }) {
 									</MenuItems>
 								</Menu>
 
-								<MobileFIlterButton />
+								<MobileFIlterButton
+									className={
+										"-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
+									}
+								>
+									<span className="sr-only">Filters</span>
+									<FunnelIcon aria-hidden="true" className="h-5 w-5" />
+								</MobileFIlterButton>
 							</div>
 						</div>
 
@@ -96,7 +103,9 @@ export default function ShopLayout({ children }) {
 							<h2 id="products-heading" className="sr-only">
 								Products
 							</h2>
-
+							<h1 className="text-xl text-primary-dark font-semibold">
+								Categories
+							</h1>
 							<div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
 								{/* Filters */}
 								<CategoriesSection filters={filters} />

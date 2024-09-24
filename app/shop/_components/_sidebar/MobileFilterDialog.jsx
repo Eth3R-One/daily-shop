@@ -21,6 +21,7 @@ import {
 } from "@heroicons/react/20/solid";
 import useMobileNav from "@/app/hooks";
 import CategoriesSection from "../CategoriesSection";
+import MobileFIlterButton from "../MobileFIlterButton";
 const MobileFilterDialog = ({ filters }) => {
 	const { mobileFiltersOpen, setMobileFiltersOpen } = useMobileNav();
 
@@ -42,14 +43,22 @@ const MobileFilterDialog = ({ filters }) => {
 				>
 					<div className="flex items-center justify-between px-4">
 						<h2 className="text-lg font-medium text-gray-900">Filters</h2>
-						<button
+						{/* <button
 							type="button"
 							onClick={() => setMobileFiltersOpen(false)}
 							className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
 						>
 							<span className="sr-only">Close menu</span>
 							<XMarkIcon aria-hidden="true" className="h-6 w-6" />
-						</button>
+						</button> */}
+						<MobileFIlterButton
+							className={
+								"-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
+							}
+						>
+							<span className="sr-only">Close menu</span>
+							<XMarkIcon aria-hidden="true" className="h-6 w-6" />
+						</MobileFIlterButton>
 					</div>
 
 					{/* Filters */}
