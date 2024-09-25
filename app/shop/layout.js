@@ -6,6 +6,8 @@ import MobileNavProvider from "../providers";
 import MobileFIlterButton from "./_components/MobileFIlterButton";
 import CategoriesSection from "./_components/CategoriesSection";
 import { getCategories } from "../actions/category-actions";
+import Pagination from "./_components/Pagination";
+import { getTotalProductsSize } from "../actions/product-actions";
 
 const sortOptions = [
 	{ name: "Most Popular", href: "#", current: false },
@@ -35,6 +37,8 @@ function classNames(...classes) {
 
 export default async function ShopLayout({ children }) {
 	const categories = await getCategories();
+
+	const totalProductsSize = await getTotalProductsSize();
 	return (
 		<MobileNavProvider>
 			<div className="bg-white">
@@ -113,6 +117,7 @@ export default async function ShopLayout({ children }) {
 								{/* Product grid */}
 								<div className="lg:col-span-3">{children}</div>
 							</div>
+							<Pagination totalProductsSize={totalProductsSize} />
 						</section>
 					</main>
 				</div>
