@@ -1,5 +1,6 @@
 import { getProducts } from "@/app/actions/product-actions";
 import PorductsList from "./PorductsList";
+import Link from "next/link";
 
 export default async function HomepageProductSection() {
 	const products = await getProducts({ LIMIT: 9 });
@@ -22,13 +23,13 @@ export default async function HomepageProductSection() {
 				<PorductsList products={products} />
 			</div>
 			<div className="px-4 sm:hidden">
-				<a
-					href="#"
+				<Link
+					href="/shop"
 					className="block text-xl font-semibold text-indigo-600 hover:text-indigo-500"
 				>
 					Browse all Products
 					<span aria-hidden="true"> &rarr;</span>
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
