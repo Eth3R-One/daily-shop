@@ -11,13 +11,13 @@ export default async function HomepageProductSection() {
 					<h2 className=" text-2xl font-bold tracking-tight text-gray-900 pb-10 pt-0">
 						Products
 					</h2>
-					<a
-						href="#"
+					<Link
+						href="/shop"
 						className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
 					>
 						Browse all products
 						<span aria-hidden="true"> &rarr;</span>
-					</a>
+					</Link>
 				</div>
 
 				<PorductsList products={products} />
